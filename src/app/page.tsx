@@ -5,8 +5,15 @@ import WarumKivocadoSection from "./start-seite/WarumKivocadoSection";
 import KIVerstehenSection from "./start-seite/KIVerstehenSection";
 import BlogTeaserSection from "./start-seite/BlogTeaserSection";
 import VertrauenSection from "./start-seite/VertrauenSection";
+import KIWissenSection from "./start-seite/KIWissenSection";
+import OverviewSection2 from "./start-seite/OverviewSection2";
+import HeroSection from "./start-seite/HeroSection";
+import BlogPreviewSlider from "./start-seite/BlogPreviewSlider";
+import PopularToolsCarousel from "./start-seite/PopularToolsCarousel";
+import ComparisonTeaser from "./start-seite/ComparisonTeaser";
 
 export default function HomePage() {
+    console.log("📄 HomePage gestartet");
   return (
     <>
       <Head>
@@ -28,9 +35,8 @@ export default function HomePage() {
       </Head>
 
       <HeroIntroSection />
-      <OverviewSection />
       <WarumKivocadoSection />
-      <KIVerstehenSection />
+      <OverviewSection />
       <BlogTeaserSection />
       <VertrauenSection />
     </>

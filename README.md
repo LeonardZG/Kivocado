@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kivocado
 
-## Getting Started
+Kivocado ist eine experimentelle Blog- und Informationsplattform rund um Künstliche Intelligenz.  
+Die Website dient als KI-Ratgeber und bietet einen strukturierten Überblick über verschiedene KI-Tools, Anwendungsfälle und Konzepte.
 
-First, run the development server:
+Das Projekt ist bewusst als **offenes, fortlaufendes Lern- und Entwicklungsprojekt** angelegt und erhebt keinen Anspruch auf Vollständigkeit oder einen finalen Zustand.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Projektidee
+
+Ziel von Kivocado ist es, Inhalte rund um Künstliche Intelligenz verständlich aufzubereiten und technisch sauber darzustellen.  
+Der Fokus liegt dabei auf:
+
+- einer klaren inhaltlichen Struktur
+- einer modernen, wartbaren Frontend-Architektur
+- der Kombination aus statischen Inhalten und dynamischer Darstellung
+
+Kivocado ist kein kommerzielles Produkt, sondern ein persönliches Projekt zur Vertiefung moderner Webtechnologien und zum Experimentieren mit Content-getriebenen Anwendungen.
+
+---
+
+## Verwendete Technologien
+
+Das Projekt basiert auf einem modernen TypeScript- und React-Stack:
+
+- Next.js 15 (App Router)
+- React 19
+- TypeScript (`.tsx`)
+- Tailwind CSS
+- PostCSS & Autoprefixer
+- Framer Motion (Animationen)
+- MDX (`next-mdx-remote`)
+- gray-matter (Frontmatter Parsing)
+- remark & remark-html (Markdown Verarbeitung)
+- next-sitemap (SEO / Sitemap Generierung)
+- ESLint
+- Git & GitHub
+- npm
+
+---
+
+## Projektstruktur und Architektur
+
+Die Anwendung ist komponentenbasiert aufgebaut und trennt Inhalte, Layout und UI-Logik klar voneinander.  
+Inhalte werden über Markdown/MDX verarbeitet und zur Laufzeit gerendert.
+
+```text
+src/
+├── app/
+│   ├── layout.tsx       Globales Layout
+│   └── page.tsx         Startseite
+│
+├── components/
+│   ├── Header.tsx
+│   ├── BlogPost.tsx
+│   └── Navigation.tsx
+│
+├── content/
+│   └── posts/           Markdown / MDX Inhalte
+│
+├── styles/
+│   └── globals.css      Globales Styling
+│
+public/
+└── assets/              Bilder & statische Dateien
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Aktueller Stand
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Kivocado befindet sich in einem laufenden Entwicklungs- und Experimentierstadium.
+Inhalte werden schrittweise ergänzt
+Struktur und Design werden regelmäßig angepasst
+einzelne Features dienen primär Lern- und Testzwecken
+Ein „fertiger“ Zustand ist nicht geplant – das Projekt entwickelt sich kontinuierlich weiter.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Ziel des Projekts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vertiefung meiner Kenntnisse in Next.js, React und TypeScript
+Arbeiten mit MDX-Content-Pipelines
+Umsetzung einer realistischen, contentlastigen Webanwendung
+Experimentieren mit SEO, Animationen und UI-Strukturen
+Aufbau eines langfristigen Referenzprojekts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Autor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Leonard Zgonjanin
+Bachelor of Science Informatik
+Angehender Junior Softwareentwickler

@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-[#fef9ec] text-sm text-black px-6 py-6 border-t border-gray-300">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+      <div className="w-full px-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
         
         {/* Links: Icons + E-Mail */}
         <div className="space-y-2 text-center md:text-left">

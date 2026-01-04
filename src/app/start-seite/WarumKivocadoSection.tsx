@@ -2,41 +2,34 @@
 
 const WarumKivocadoSection = () => {
   return (
-    <section className="bg-[#fef9ec] text-black px-6 py-20">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Warum Kivocado?
+    <section className="bg-[#fef9ec] text-black px-6 py-24">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+          Kivocado macht KI verständlich – und anwendbar
         </h2>
-        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12 text-lg">
-          Erfahre, warum Kivocado der ideale Einstiegspunkt in die Welt der <strong>KI-Tools</strong> ist – verständlich, kuratiert und nachhaltig gedacht.
+        <p className="text-lg text-gray-700 mb-16">
+          Du willst KI nutzen, ohne dich durch Fachjargon und 100 Tools zu kämpfen? Dann bist du hier richtig. Kivocado filtert für dich das Wichtigste heraus – verständlich, ehrlich und direkt nutzbar.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="font-semibold text-lg mb-2">Kuratiert & unabhängig</h3>
-            <p className="text-sm text-gray-700">
-              Wir zeigen nur die besten Tools – ausgewählt mit Sorgfalt und ohne Werbung.
+        <div className="space-y-12 text-left">
+          <div className="border-l-4 border-green-600 pl-6">
+            <h3 className="font-semibold text-xl mb-2">Weniger Suchen, mehr Verstehen</h3>
+            <p className="text-gray-700">
+              Wir zeigen dir, was wirklich zählt – statt dich mit KI-Buzzwords und leeren Versprechen zu überladen.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="font-semibold text-lg mb-2">Klar & verständlich</h3>
-            <p className="text-sm text-gray-700">
-              KI muss nicht kompliziert sein. Bei uns bekommst du klare Erklärungen und praktische Tipps.
+          <div className="border-l-4 border-green-600 pl-6">
+            <h3 className="font-semibold text-xl mb-2">Wissen, das hängen bleibt</h3>
+            <p className="text-gray-700">
+              Ob Einsteiger:in oder Fortgeschrittene:r – unsere Inhalte sind so aufgebaut, dass du sie sofort anwenden kannst.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="font-semibold text-lg mb-2">Immer aktuell</h3>
-            <p className="text-sm text-gray-700">
-              Die KI-Welt verändert sich schnell – wir halten dich mit regelmäßigen Updates auf dem Laufenden.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="font-semibold text-lg mb-2">Grün gedacht</h3>
-            <p className="text-sm text-gray-700">
-              Nachhaltigkeit liegt uns am Herzen – bei Technologie, Design und Mindset.
+          <div className="border-l-4 border-green-600 pl-6">
+            <h3 className="font-semibold text-xl mb-2">Technologie mit Haltung</h3>
+            <p className="text-gray-700">
+              Wir denken KI nicht nur effizient, sondern auch nachhaltig. Für Menschen, die mit Sinn arbeiten wollen.
             </p>
           </div>
         </div>
@@ -46,3 +39,5 @@ const WarumKivocadoSection = () => {
 };
 
 export default WarumKivocadoSection;
+
+

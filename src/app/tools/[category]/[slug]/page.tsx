@@ -63,8 +63,11 @@ async function getToolBySlug(slug: string): Promise<Tool | null> {
 }
 
 // ✅ SEO-Metadaten erzeugen
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const tool = await getToolBySlug(params.slug);
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const slug = (await props).params.slug;
+  const tool = await getToolBySlug(slug); // ✅ warnung verschwindet
+
+
   if (!tool) return {};
 
   return {
@@ -78,9 +81,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+
 // ✅ Tool-Detail-Seite
-export default async function ToolDetailPage({ params }: Props) {
-  const tool = await getToolBySlug(params.slug);
+export default async function ToolDetailPage(props: Props) {
+  const slug = (await props).params.slug; // ⚠️ wichtig
+  const tool = await getToolBySlug(slug);
+
   if (!tool) return notFound();
 
   const renderedBlocks = await Promise.all(
@@ -89,7 +95,8 @@ export default async function ToolDetailPage({ params }: Props) {
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-6">{tool.title}</h1>
+      <h1 className="sr-only">{tool.title}</h1>
+
 
       {tool.coverImage && (
         <Image
@@ -115,8 +122,8 @@ async function renderContentBlock(block: any, index: number) {
           key={index}
           className="mb-6 text-base leading-relaxed text-gray-900
             [&_h1]:text-4xl [&_h1]:font-extrabold [&_h1]:mt-12 [&_h1]:mb-6
-            [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:underline [&_h2]:underline-offset-4 [&_h2]:mt-10 [&_h2]:mb-4
-            [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:underline [&_h3]:underline-offset-2 [&_h3]:mt-6 [&_h3]:mb-2
+            [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4
+            [&_h3]:text-xl [&_h3]:font-semibold  [&_h3]:mt-6 [&_h3]:mb-2
             [&_p]:mb-4 [&_strong]:font-semibold"
           dangerouslySetInnerHTML={{ __html: convertRichTextToHtml(block.text) }}
         />
@@ -199,14 +206,29 @@ function convertRichTextToHtml(blocks: any[]): string {
         const content = node.children.map((c: any) => c.text).join("");
         return `<h${level}>${content}</h${level}>`;
       }
+
       if (node.type === "paragraph") {
         const content = node.children.map((c: any) => c.text).join("");
         return `<p>${content}</p>`;
       }
+
+      if (node.type === "list") {
+        const isOrdered = node.format === "ordered";
+        const tag = isOrdered ? "ol" : "ul";
+        const items = node.children
+          .map((item: any) => {
+            const text = item.children.map((c: any) => c.text).join("");
+            return `<li>${text}</li>`;
+          })
+          .join("");
+        return `<${tag}>${items}</${tag}>`;
+      }
+
       return "";
     })
     .join("\n");
 }
+
 
 function getCalloutColor(variant: string) {
   switch (variant) {

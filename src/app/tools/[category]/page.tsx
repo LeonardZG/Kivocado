@@ -59,7 +59,7 @@ export default async function ToolCategoryPage({ params }: Props) {
         {tools.map((tool) => (
           <a
             key={tool.slug}
-            href={`/tools/tool/${tool.slug}`}
+            href={`/tools/${tool.category}/${tool.slug}`}
             className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
           >
            {tool.coverImage && (

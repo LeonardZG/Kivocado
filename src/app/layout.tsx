@@ -7,14 +7,17 @@ export const metadata = {
   description: "Übersichtliche KI-Tools für Texte, Bilder, Videos & mehr.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className="h-full">
-      <body className="bg-[#fef9ec] text-black min-h-screen flex flex-col">
+    <html lang="de" className="h-full w-full">
+      <body className="bg-[#fef9ec] text-black min-h-screen flex flex-col w-full overflow-x-hidden">
         <Header />
-        <main className="flex-grow pt-6">
+
+        {/* ✅ Main mit voller Breite */}
+        <main className="flex-grow w-full pt-6">
           {children}
         </main>
+
         <Footer />
       </body>
     </html>

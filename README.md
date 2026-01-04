@@ -9,82 +9,123 @@ Das Projekt ist bewusst als **offenes, fortlaufendes Lern- und Entwicklungsproje
 
 ## Projektidee
 
-Ziel von Kivocado ist es, Inhalte rund um Künstliche Intelligenz verständlich aufzubereiten und technisch sauber darzustellen.  
-Der Fokus liegt dabei auf:
+Ziel von Kivocado ist es, KI-bezogene Inhalte verständlich, strukturiert und technisch sauber darzustellen.
 
-- einer klaren inhaltlichen Struktur
-- einer modernen, wartbaren Frontend-Architektur
-- der Kombination aus statischen Inhalten und dynamischer Darstellung
+Der Fokus liegt auf:
+- einer klaren, feature-orientierten Seitenstruktur
+- modernen Frontend-Best-Practices mit Next.js (App Router)
+- komponentenbasierter UI-Architektur
+- realistischen Content- und Routing-Szenarien
+- SEO-Grundlagen und performanter Seitenstruktur
 
-Kivocado ist kein kommerzielles Produkt, sondern ein persönliches Projekt zur Vertiefung moderner Webtechnologien und zum Experimentieren mit Content-getriebenen Anwendungen.
+Das Projekt dient primär der Vertiefung moderner Webtechnologien und als langfristiges Referenzprojekt.
 
 ---
 
 ## Verwendete Technologien
 
-Das Projekt basiert auf einem modernen TypeScript- und React-Stack:
+Das Projekt basiert auf einem aktuellen TypeScript- und React-Ökosystem und entspricht dem Stand der im Repository verwendeten Abhängigkeiten.
 
+Core
 - Next.js 15 (App Router)
 - React 19
-- TypeScript (`.tsx`)
+- TypeScript
+
+Styling & UI
 - Tailwind CSS
-- PostCSS & Autoprefixer
+- PostCSS
+- Autoprefixer
 - Framer Motion (Animationen)
-- MDX (`next-mdx-remote`)
-- gray-matter (Frontmatter Parsing)
-- remark & remark-html (Markdown Verarbeitung)
-- next-sitemap (SEO / Sitemap Generierung)
-- ESLint
-- Git & GitHub
+- Heroicons / React Icons
+
+Content & Utilities
+- gray-matter (Frontmatter-Parsing)
+- remark / remark-html (Markdown-Verarbeitung)
+- qs (Query-String-Handling)
+
+Tooling & Qualität
+- ESLint (Next.js Config)
+- next-sitemap (automatische Sitemap-Generierung)
 - npm
+- Git & GitHub
+Hinweis: MDX wird aktuell nicht produktiv eingesetzt, ist aber technisch vorbereitet und kann später integriert werden.
 
 ---
 
 ## Projektstruktur und Architektur
 
-Die Anwendung ist komponentenbasiert aufgebaut und trennt Inhalte, Layout und UI-Logik klar voneinander.  
-Inhalte werden über Markdown/MDX verarbeitet und zur Laufzeit gerendert.
+Die Anwendung nutzt vollständig den Next.js App Router.
+Routen, Layouts und UI-Sektionen sind feature-orientiert organisiert, nicht nach technischen Layern.
 
 ```text
 src/
 ├── app/
-│   ├── layout.tsx       Globales Layout
-│   └── page.tsx         Startseite
+│   ├── blog/
+│   │   ├── [slug]/
+│   │   │   └── page.tsx        Dynamische Blog-Detailseiten
+│   │   └── page.tsx            Blog-Übersicht
+│   │
+│   ├── tools/
+│   │   ├── [category]/
+│   │   │   └── page.tsx        Tool-Kategorien
+│   │   └── page.tsx            Tools-Übersicht
+│   │
+│   ├── datenschutz/
+│   │   └── page.tsx
+│   │
+│   ├── impressum/
+│   │   └── page.tsx
+│   │
+│   ├── start-seite/            UI-Sektionen der Startseite
+│   │   ├── HeroSection.tsx
+│   │   ├── BlogTeaserSection.tsx
+│   │   ├── BlogPreviewSlider.tsx
+│   │   ├── ComparisonTeaser.tsx
+│   │   ├── KIVerstehenSection.tsx
+│   │   ├── KIWissenSection.tsx
+│   │   ├── PopularToolsCarousel.tsx
+│   │   ├── VertrauenSection.tsx
+│   │   └── WarumKivocadoSection.tsx
+│   │
+│   ├── components/             Seitenübergreifende Komponenten
+│   │   └── BlogIntroSection.tsx
+│   │
+│   ├── header/
+│   │   └── Header.tsx
+│   │
+│   ├── footer/
+│   │   ├── Footer.tsx
+│   │   └── Icons.tsx
+│   │
+│   ├── layout.tsx              Globales App-Layout
+│   ├── page.tsx                Startseite
+│   └── globals.css             Globales Styling
 │
-├── components/
-│   ├── Header.tsx
-│   ├── BlogPost.tsx
-│   └── Navigation.tsx
-│
-├── content/
-│   └── posts/           Markdown / MDX Inhalte
-│
-├── styles/
-│   └── globals.css      Globales Styling
+├── lib/                         Helper-Funktionen & Datenlogik
 │
 public/
-└── assets/              Bilder & statische Dateien
+└── assets/                     Bilder & statische Dateien
 ```
 
 ---
 
-## Aktueller Stand
+## Entwicklungsstand
 
-Kivocado befindet sich in einem laufenden Entwicklungs- und Experimentierstadium.
-Inhalte werden schrittweise ergänzt
-Struktur und Design werden regelmäßig angepasst
-einzelne Features dienen primär Lern- und Testzwecken
-Ein „fertiger“ Zustand ist nicht geplant – das Projekt entwickelt sich kontinuierlich weiter.
+Kivocado befindet sich in aktiver Entwicklung:
+- Inhalte und Seiten werden schrittweise ergänzt
+- Struktur und UI-Sektionen werden regelmäßig refaktoriert
+- einzelne Komponenten dienen gezielt Lern- und Experimentierzwecken
+- ein abgeschlossener Endzustand ist nicht geplant
 
 ---
 
-## Ziel des Projekts
+## Projektziele
 
-Vertiefung meiner Kenntnisse in Next.js, React und TypeScript
-Arbeiten mit MDX-Content-Pipelines
-Umsetzung einer realistischen, contentlastigen Webanwendung
-Experimentieren mit SEO, Animationen und UI-Strukturen
-Aufbau eines langfristigen Referenzprojekts
+- Vertiefung von Next.js App Router-Konzepten
+- Saubere React- & TypeScript-Architektur
+- Feature-basierte Ordnerstruktur
+- Umsetzung realitätsnaher Routing- & Content-Szenarien
+- Aufbau eines langfristigen persönlichen Referenzprojekts
 
 ---
 

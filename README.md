@@ -7,6 +7,15 @@ Das Projekt ist bewusst als **offenes, fortlaufendes Lern- und Entwicklungsproje
 
 ---
 
+## Screenshots/Preview
+
+<img src="docs/screenshots/Startseite1-Kivocado.png" width="100%" alt="Startseite">
+<img src="docs/screenshots/Startseite2-Kivocado.png" width="100%" alt="Startseite">
+<img src="docs/screenshots/Kategorien-Kivocado.png" width="100%" alt="Kategorien">
+<img src="docs/screenshots/Blogseite-Kivocado.png" width="100%" alt="Blogseite">
+
+---
+
 ## Projektidee
 
 Ziel von Kivocado ist es, KI-bezogene Inhalte verständlich, strukturiert und technisch sauber darzustellen.

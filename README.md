@@ -61,6 +61,28 @@ Hinweis: MDX wird aktuell nicht produktiv eingesetzt, ist aber technisch vorbere
 
 ---
 
+## Content Management (CMS)
+
+Die Inhalte von Kivocado (Blogartikel, Tool-Einträge und Kategorien)
+werden über ein **Headless CMS auf Basis von Strapi** verwaltet.
+
+Strapi dient als zentrale Content-Quelle und stellt strukturierte Inhalte
+über eine REST-API bereit, die von der Next.js-Anwendung serverseitig
+abgerufen wird.
+
+### CMS-Integration im Projekt
+
+- Headless-Ansatz mit klarer Trennung von Content und Frontend
+- Dynamische Routen basierend auf Slugs (`[slug]`, `[category]`)
+- Datenabfrage über die Strapi REST API
+- Nutzung von `qs` zur Erstellung komplexer Queries (`filters`, `populate`)
+- Serverseitiges Rendering mit Incremental Static Regeneration (ISR)
+
+Die Seiten werden mit einer zeitbasierten Revalidierung ausgeliefert,
+um eine gute Balance zwischen Performance und Aktualität zu erreichen.
+
+---
+
 ## Projektstruktur und Architektur
 
 Die Anwendung nutzt vollständig den Next.js App Router.
